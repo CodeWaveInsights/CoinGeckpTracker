@@ -1,27 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import Banner from './components/Banner/Banner'
-import CoinTable from './components/CoinTable/CoinTable.Jsx'
-import ErrorBoundary from './components/ErrorBoundary'
-import Navbar from './components/Navbar/Navbar'
+// import { useState } from "react";
+import "./App.css";
+import Home from "./pages/Home";
+import { CurrencyContext } from "./context/CurrencyContext";
+import Routing from "./components/Routing/Routing";
 
 function App() {
-
-  const [currency, setCurrency]=useState('usd');
+  // const [currency, setCurrency] = useState("usd");
 
   return (
     <>
-    {currency}
-       <Navbar setCurrency={setCurrency}/>
-       <Banner/>
-
-       <ErrorBoundary>
-       <CoinTable currency={currency}/>
-       </ErrorBoundary>
-    
-   
+      {/* <CurrencyContext.Provider value={{ currency, setCurrency }}> */}
+       <Routing/>
+      {/* </CurrencyContext.Provider> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
